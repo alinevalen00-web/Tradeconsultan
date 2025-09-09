@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Fungsi toggle mode untuk semua halaman
+    window.toggleMode = function() {
+        document.body.classList.toggle('dark-mode');
+        var btn = document.querySelector('.mode-toggle');
+        if(document.body.classList.contains('dark-mode')) {
+            btn.textContent = 'Light Mode';
+        } else {
+            btn.textContent = 'Dark Mode';
+        }
+    }
     const contactForm = document.getElementById('contactForm');
 
     if (contactForm) {
