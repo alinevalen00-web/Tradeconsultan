@@ -1,13 +1,22 @@
+.tsparticles-canvas {
+    filter: drop-shadow(0 0 8px #a259ff) brightness(1.1);
+}
 body {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: 'Inter', 'Montserrat', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5faff;
-    color: #222;
+    background-color: #181a20;
+    color: #f8f9fa;
     line-height: 1.7;
     font-size: 1.1rem;
     letter-spacing: 0.02em;
     transition: background 0.3s, color 0.3s;
+}
+
+header {
+    background-color: #23272f;
+    box-shadow: 0 2px 12px rgba(44, 130, 201, 0.08);
+    transition: background 0.3s;
 }
 
 body.dark-mode {
@@ -19,20 +28,6 @@ body.dark-mode {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
-}
-
-header {
-    background-color: #e3f0ff;
-    padding: 1rem 0;
-    box-shadow: 0 2px 12px rgba(44, 130, 201, 0.08);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    transition: background 0.3s;
-}
-
-body.dark-mode header {
-    background-color: #23272f;
 }
 
 header .container {
@@ -52,7 +47,7 @@ header .container {
     height: 40px;
     width: auto;
     display: block;
-    filter: none;
+    filter: drop-shadow(0 2px 6px #000) brightness(1.2);
 }
 
 nav ul {
@@ -64,25 +59,23 @@ nav ul {
 
 nav li a {
     text-decoration: none;
-    color: #29703e;
+    color: #f8d90f;
     font-weight: 700;
     font-size: 1.08rem;
     padding: 0.5rem 1rem;
     letter-spacing: 0.04em;
     transition: color 0.3s ease;
     font-family: 'Montserrat', Arial, sans-serif;
-}
-
-body.dark-mode nav li a {
-    color: #f8f9fa;
+    border-radius: 8px;
 }
 
 nav li a:hover {
     color: #ff9100;
+    background: #23272f;
 }
 
-body.dark-mode nav li a:hover {
-    color: #25d366;
+body.dark-mode nav li a {
+    color: #f8f9fa;
 }
 
 section {
@@ -91,12 +84,26 @@ section {
 }
 
 #hero {
-    background: linear-gradient(135deg, #e3f0ff 0%, #b3e5fc 100%);
-    color: #222;
+    background: linear-gradient(135deg, #23272f 0%, #181a20 100%);
+    color: #f8f9fa;
     text-align: center;
+}
+
+#contact {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
     padding: 8rem 0 6rem 0;
     border-bottom: 4px solid #ff9100;
-    transition: background 0.3s, color 0.3s;
 }
 
 body.dark-mode #hero {
@@ -109,17 +116,13 @@ body.dark-mode #hero {
     font-size: 3rem;
     font-family: 'Montserrat', Arial, sans-serif;
     font-weight: 800;
-    color: #29703e;
+    color: #f8d90f;
     letter-spacing: 0.06em;
     margin-bottom: 1.5rem;
 }
 
-#hero p {
-    font-size: 1.25rem;
-    max-width: 650px;
-    margin: 0 auto 2rem;
-    font-family: 'Inter', Arial, sans-serif;
-    color: #444;
+#hero p, #hero ul, #hero li {
+    color: #f8f9fa;
 }
 
 .btn {
@@ -138,7 +141,8 @@ body.dark-mode #hero {
 }
 
 .btn:hover {
-    background-color: #29703e;
+    background-color: #25d366;
+    color: #23272f;
     transform: translateY(-2px);
 }
 
@@ -154,11 +158,10 @@ body.dark-mode .btn {
 h3 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #29703e;
+    color: #f8d90f;
     font-family: 'Montserrat', Arial, sans-serif;
     font-weight: 800;
     letter-spacing: 0.05em;
-    transition: color 0.3s;
 }
 
 body.dark-mode h3 {
@@ -167,22 +170,23 @@ body.dark-mode h3 {
 
 .service-list {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: center;
+    gap: 32px;
     margin-top: 2rem;
     flex-wrap: wrap;
 }
 
 .service-item {
-    background-color: #fff;
-    color: #222;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(44, 130, 201, 0.08);
-    flex: 1;
-    min-width: 250px;
+    background: rgba(40,44,52,0.85);
+    color: #f8f9fa;
     font-family: 'Inter', Arial, sans-serif;
-    transition: background 0.3s, color 0.3s;
+    box-shadow: 0 4px 15px rgba(44, 130, 201, 0.08);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    min-width: 250px;
+    max-width: 340px;
+    margin-bottom: 2rem;
+    transition: box-shadow 0.3s;
 }
 
 body.dark-mode .service-item {
@@ -192,12 +196,11 @@ body.dark-mode .service-item {
 
 .service-item h4 {
     font-size: 1.5rem;
-    color: #29703e;
+    color: #ff9100;
     margin-bottom: 1rem;
     font-family: 'Montserrat', Arial, sans-serif;
     font-weight: 700;
     letter-spacing: 0.04em;
-    transition: color 0.3s;
 }
 
 body.dark-mode .service-item h4 {
@@ -211,19 +214,15 @@ body.dark-mode .service-item h4 {
 }
 
 #contactForm input, #contactForm textarea {
-    background: #fff;
-    color: #222;
-    border: 1px solid #b3e5fc;
-    font-family: 'Inter', Arial, sans-serif;
-    font-size: 1.08rem;
-    letter-spacing: 0.03em;
-    transition: background 0.3s, color 0.3s;
-}
-
-body.dark-mode #contactForm input, body.dark-mode #contactForm textarea {
     background: #23272f;
     color: #f8f9fa;
     border: 1px solid #444;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 1.08rem;
+    letter-spacing: 0.03em;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    padding: 1rem;
 }
 
 #contactForm input::placeholder, #contactForm textarea::placeholder {
@@ -231,14 +230,14 @@ body.dark-mode #contactForm input, body.dark-mode #contactForm textarea {
 }
 
 footer {
-    background-color: #e3f0ff;
-    color: #29703e;
+    background-color: #23272f;
+    color: #f8f9fa;
     text-align: center;
     padding: 2rem 0;
     font-family: 'Inter', Arial, sans-serif;
     font-size: 1.05rem;
     letter-spacing: 0.03em;
-    transition: background 0.3s, color 0.3s;
+    border-top: 2px solid #ff9100;
 }
 
 body.dark-mode footer {
